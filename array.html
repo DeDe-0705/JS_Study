@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>wangdeshi</div>
+    <div>taoyuting</div>
+    <style>
+        .hide{
+            display: none;
+        }
+    </style>
+    <script>
+        // const array = new Array("wangdeshi", "taoyuting", 1, 2, 3, 4);
+        // console.log(array.join("///"));// join将数组所有成员以字符串形式进行拼接。
+        // console.log(array);
+        // console.log(typeof [123,123]);
+        // const aa = [1, 2, 3, 4];
+        // console.table(aa);
+
+        // let array = [[1],[2]];
+        // console.log(array[1][0]);
+
+        // let sessons = [{
+        //     name: "chinese",
+        //     num: 10
+        // },{
+        //     name: "maths",
+        //     num: 9    
+        // }];
+        // console.table(sessons);
+        // const数组里面的成员可以改变。
+        // const arr = [1, 2];
+        // arr[0] = 99;
+        // console.log(arr);
+        // let test = ["wangdeshi"];
+        // let cms = Array.of(6); // ES6解决new Array(6)会创建6个长度的空数组的问题。
+        // console.table(cms);
+        // console.log(typeof [1, 3, 4, 5].toString());
+
+        // let str = "wangdeshi";
+        // console.log(str.split(""));
+        // console.log(Array.from(str));// from根据对象或者字符串里头的length来判断数组的长度来进行转换，没有length不行。
+        // let obj = {
+        //     name: "wangdeshi",
+        //     age: 22
+        // };
+        // let a = document.querySelectorAll("div");
+        // console.log(
+        //     Array.from(a, function(item) {// 第二个参数 mapFunction 数组每个元素要调用的函数
+        //         console.log(item.innerText);
+        //         item.style.backgroundColor = "red"; 
+        //         return item;
+        //     })
+        // );
+        // 展开语法
+        // let arr = ["wangdeshi", "taoyuting"];
+        // let hd = ["man", "woman"];
+        // arr = [...arr, ...hd];// ...扩展语法
+        // function show(...arr) {// 传入参数的数目不确定的时候，...扩展很有帮助。
+        //     return arr.reduce((a, b) =>{ // a为初始值或者total，b为当前值
+        //         console.log(b);
+        //         return a+=b;
+        //     },0);
+        // }
+        // let test = {
+        //     name: "wang",
+        //     age: 1,
+        //     valueOf: function() {
+        //         return this.age;
+        //     }
+        // }
+        // console.log(test.valueOf());
+        // 使用from将拥有length属性的对象或者可迭代的对象来返回一个数组。
+        // const div = document.querySelectorAll("div");
+        // Array.from(div).map(function(item) {
+        //     console.log(item);
+        // });
+        // // 原型链
+        // Array.prototype.map.call(div, function(item) {
+        //     console.log(item);
+        // });
+        // 扩展
+        // [...div].map(function(item){
+        //     item.addEventListener("click", function() {
+        //         // console.log(this.classList);// classList 属性返回元素的类名，作为 DOMTokenList 对象。该属性用于在元素中添加，移除及切换 CSS 类。
+        //         this.classList.toggle("hide");// toggle() 方法用于绑定两个或多个事件处理器函数，以响应被选元素的轮流的 click 事件。
+        //     })
+        // });
+        // 解构赋值
+        //1. 数组解构 按照顺序解构，赋值给前面对应下标的变量
+        //2. 对象解构 赋值时按照属性名解构，与顺序无关，没有该属性是无法解构赋值的
+        //3. 字符串解构 str有length属性
+        // let arr = ['王德师',2020];
+        // let[name, year] = arr;
+        // var str = "abcdefg";
+        // let {length} = str;
+        // console.log(length);
+        // function get () {
+        //     return ["王德师",2020];
+        // }
+        // let [name, year] = get();
+        // console.log(name);
+        // let [name, ...args] = ["wangdeshi", "nihao", 2010];//这里的...为吸收
+        // let a = ["a", ...args];//这里的...为展开
+        // console.log(a);
+        // let array = ["a", "b", "c"];
+        // let add = ["d","e"];
+        // array.push(...add);// 返回添加数据后数组的长度。
+        // console.table(array);
+        // function rangeArray(begin, end) {
+        //     const array = [];
+        //     for(let i=begin;i<=end;i++){
+        //         array.push(i);
+        //     }
+        //     return array;
+        // }
+        // console.table(rangeArray(11, 15));
+        // let array = ["wangdeshi", "taoyuting"];
+        // let a = array.shift();// 从前面弹出，并且返回弹出的变量。
+        // let a = array.unshift("abc");// 从数组前面压入新变量,并且返回相应的长度。
+        // let vars = array.pop( );// 返回从后面推出的变量。
+        // console.log(a);
+        // console.log([1,2,3,4,5].fill("wangdeshi",1,3));// fill将一个固定值替换数组元素,(1,3)表示数组下标1-3位置之间改为wangdeshi，不包括3。
+        // let test = "wang";
+        // let arr = Array.from(test, x=>{
+        //     return x = x + "a";
+            
+        // });
+        // let arrs = Array.of(1,2,3,4);
+        // let a = Array.of(...[1,2,3,,,6]);
+        // console.log(a);
+        //设置数组的length可以修改数组的内容。
+        // let arr = [1,2,3,4,5];
+        // console.log(arr);
+        // arr.length=3;
+        // console.log(arr);
+        // //通过length来添加元素
+        // arr[arr.length] = 6;
+        // console.log(arr);
+        // arr[arr.length] = 7;
+        // console.log(arr);
+        // let a = new Number();
+        // console.log(typeof a);
+        //数组迭代器
+        let arr = ["wang","tao"];
+        let values = arr.values();
+        let entries = arr.entries();
+        let keys = arr.keys();
+        console.log(entries);
+        for(const value of keys){
+            console.log(value);
+        }
+        // while(({value, done} = values.next()) && done === false){
+        //     console.log(value);
+        // }
+        // console.log(values);
+    </script>
+</body>
+</html>

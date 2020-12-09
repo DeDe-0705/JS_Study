@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = [1,2,3,4,5];
+        // console.log(arr.slice(0,2)[0]);// 提取出数组下标的0-2位置之间的数据，不包括0和2.（原数组没有改变）
+        // let dd = arr.splice(0,1,"abc");//第一个参数为起始位置，第二个参数为截取几个数据。原数组发生改变。
+        //第三个参数为截取后的数组的前面添加新变量。
+        // splice函数可以实现删除，替换，增加。
+        // let cc = arr.splice(1,0,"abc");// 位置1前增加新变量
+        // let bb = arr.splice(1,1,"abc");// 相应位置替换变量。
+        // console.table(arr);
+
+        //数组移动实例
+        // function move(array, from, to) {
+        //     if(from<0 || to>=array.length){
+        //         console.error("参数错误");
+        //         return;
+        //     }
+        //     from-=1;
+        //     to-=1;
+        //     const newArray = [...array];
+        //     let item = newArray.splice(from, 1);
+        //     newArray.splice(to,0,...item);
+        //     return newArray;
+        // }
+        // let arr = [1,2,3,4,5];
+        // console.log(move(arr,1,4));
+        //清空数组
+        // let hd = [1,2,3,4];
+        // let arr = hd;
+        // hd = [];
+        // hd.length = 0;// 会改变原有的数组内存。
+        // hd.splice(0, hd.length);// 会改变原有的数组内存，影响其他引用这个数组的变量。
+        // console.log(arr);
+        //数组的拆分与合并操作
+        // let str = "hdcms,houdunren";
+        // let arr = str.split(",");
+        // let test = arr.join("-");
+        // console.log(test);
+        // let arr = ["wangdeshi", "taoyuting"];
+        // let add = [1,2,3,4];
+        // arr = arr.concat(add,["a","bs"]);// concat用于连接两个或多个数组，不会改变现有数组，而是返回连接后的新数组。
+        // arr = [...arr,...add,...["a","b"]];
+        // console.log(add.copyWithin(1, 0, 2));// 数组内复制成员并改变。第一个参数，复制多少个，第二个和第三个为复制的起始位置和终点，不包括终点的成员。
+        // 查找元素
+        // let arr = ["wangdeshi","abc",1 ,2 ,3, "taoyuting"];
+        // console.log(arr.includes("abc",2));// 寻找数组当中的成员，找到返回true，没有为false。第二个参数为开始查找位置。
+        // find && findIndex作用于对象。
+        // let test = arr.find(function(item){
+        //     return item === "wangdeshi";// find若为真，返回查找到的元素,没有返回undefined。
+        // });
+        // console.log(test);
+        // let lessons = [{name: "maths", num: 2},{name: "chinese", num: 4}];
+        // console.log(lessons.includes({name: "maths"}));// 因为对象和数组引用的是地址，所以作比较的时候都返回false，譬如==返回false，includes返回false。
+        // find返回值。
+        // let status = lessons.find(function(item){
+        //     return item.name == 'maths';
+        // });
+        // console.log(status);
+        //findIndex返回所在位置
+        // let status = lessons.findIndex(function(item){
+        //     return item.name == 'chinese';
+        // });
+        // console.log(status);
+        //自定义find函数
+        //for in 或者for or每一次循环都是一个块级作用域。for不是。
+        // function find(array, callback) {
+        //     for(const value of array){
+        //         if(callback(value)){
+        //             return value;
+        //         }
+        //     }
+        //     return undefined;
+        // }
+        // let arr = [1,2,3,4,5];
+        // console.log(find(arr, function(item){
+        //     return item == 22;
+        // }));
+        // 数组排序使用sort
+        // let arr = [1,5,6,2,9,7];
+        // arr = arr.sort(function(a,b){
+        //     // 负数 从小到大 正数 从大到小
+        //     return a-b;
+        // });
+        // console.table(arr);
+        // let cart = [
+        //     {
+        //         name: "Ipad",
+        //         price: 12000
+        //     },
+        //     {
+        //         name: "Iphone",
+        //         price: 8000
+        //     },
+        //     {
+        //         name: "iMac",
+        //         price: 20000
+        //     }
+        // ];
+        // cart = cart.sort(function(a,b){
+        //     return b.price - a.price;
+        // });
+        // console.table(cart);
+        //自定义sort函数(冒泡排序)
+        let arr = [1,5,6,2,3,4];
+        function sort(array, callback){
+        for(const n in array){
+            for(const m in array){
+                if(callback(array[n], array[m]) < 0){
+                    console.log(n+"|"+n);
+                    const t = array[n];
+                    array[n] = array[m];
+                    array[m] = t;
+                }
+            }
+        }
+        return array;
+        }
+        arr = sort(arr, function(a,b){
+            return a-b;
+        })
+        console.table(arr);
+    </script>
+</body>
+</html>

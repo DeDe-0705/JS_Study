@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="title">
+    <span></span>
+    <script>
+        //关于every的场景运，用如果返回为假就不再继续读取接下来的成员的值（必须返回全部为真才读取每个成员）。
+        // const user = [
+        //     {
+        //         name: "张三",
+        //         grade: 89
+        //     },
+        //     {
+        //         name: "李四",
+        //         grade: 99
+        //     },
+        //     {
+        //         name: "王五",
+        //         grade: 69
+        //     }
+        // ];
+        // let status = user.every(function(item){
+        //     console.log(item.grade);
+        //     return item.grade >60
+        // });
+        // let mes = status?"全部同学成绩合格":"部分同学成绩不合格";
+        // console.log(mes);
+        //关于some的场景运用，如果返回为假继续往下判断寻找，如果为真就不再继续往下读取成员的值。
+        // let keys = ['wang','tao'];
+        // let title = document.querySelector('[name = "title"]');
+        // title.addEventListener("keyup", function(){
+        //     const res = keys.some(keyword =>{
+        //         return this.value.indexOf(keyword)!= -1;
+        //     });
+        //     console.log(res);
+        //     document.querySelector('span').innerHTML = res?"":`必须包含关键字${keys.join(',')}。`;
+        // });
+        //关于filter的运用
+        // let arr = ["wang","tao"];
+        // let newArr = arr.filter(function(value, index, arr){
+        //     return true;
+        // });
+        // console.log(newArr);
+        // let lessons = [
+        //     {
+        //         name: "chinese",
+        //         num: 10
+        //     },
+        //     {
+        //         name: "maths",
+        //         num: 20
+        //     },
+        //     {
+        //         name: "english",
+        //         num: 30
+        //     }
+        // ];
+        // let result = lessons.filter(function(item){
+        //     return item['name'] == "maths";
+
+        // });
+        // console.log(result);
+        // map学习
+        // let arr = ["wang", "dede"];
+        // arr.map(function(value, index, arr){
+        //     console.log(value);
+        // });
+        // let test = lessons.map(function(item){
+        //     // return Object.assign({click: 100}, item);
+        //     return {
+        //         name: item.name,
+        //         num: item.num,
+        //         click: 100
+        //     }
+        // });
+        // console.table(test);
+        // console.table(lessons);
+        // reduce学习
+        let arr = [1,33,23,65,44,98];
+        let result = arr.reduce(function(pre, value, index, arr){
+            console.log(pre+"|"+value);
+            return pre += value;
+        },0);
+        console.log(result);
+    </script>
+</body>
+</html>

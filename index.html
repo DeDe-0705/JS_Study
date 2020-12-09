@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./jquery-3.4.1/jquery-3.4.1.min.js"></script>
+    <script src="./Script1.js"></script>
+    <script src="./vueTest.js"></script>
+    <script src="./vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <input id = "mark"></input>
+    <button onclick="phoneTest()">确定</button>
+    <span></span>
+    <script>
+        // let hd = "wangdeshi";
+        // for(let item in hd){
+        //     let span = document.createElement('span');
+        //     span.innerHTML = hd[item];
+        //     span.style.fontSize = ++item*10+"px";
+        //     document.body.append(span);
+        // }
+        // let dd = "wangdeshi";
+        // console.log(dd.slice(1)); // 截取字符串 负数的话从后面开始读取
+        // console.log(dd.substr(1,3)); // 从起始点截取某个长度的字符串 ang
+        // console.log(dd.substring(1,3)); // 截取2个位置之间的字符串 an
+        // const hd = "wangdeshia";
+        // console.log(hd.indexOf("d"));
+        // if(hd.indexOf("d") != -1){
+        //     console.log("Find!");
+        // }
+        // console.log(hd.indexOf("a")); 
+        // console.log(hd.includes("a")); // includes返回boolean，第二个参数设置查找起点。
+        // console.log(hd.lastIndexOf("a",7)); // 查找最后出现这个字符的位置,第二个参数设置查找起点，譬如7，第九个字符的位置对于它来说是1。
+        // console.log(hd.startsWith("w"));// 区分大小写。寻找字符串开头的字符或者字符串
+        // console.log(hd.endsWith("hia"));// 区分大小写。寻找结束位置的字符或者字符串。
+        // const test = ['php', 'css'];
+        // const string = '我喜欢php和css';
+        // test.some(test => { //some() 方法用于检测数组中的元素是否满足指定条件（函数提供）。some() 方法会依次执行数组的每个元素
+        //     console.log(test);
+        //     return string.includes(test);
+        // }); // 返回boolean值 就近原则。
+        // test.every(buf =>{
+        //     console.log(buf);
+        //     return string.includes(buf);
+        // });
+        // some()是对数组中每一项运行给定函数，如果该函数对任一项返回true，则返回true。
+        // every()是对数组中每一项运行给定函数，如果该函数对每一项返回true,则返回true。
+        // const dd = "wangdeshi";
+        // console.log(dd.replace("wang", "tao")); //替换字符串中的某段或者某个字符。
+        const word = ["one", "two", "three", "four"];
+        const string = "wang and tao";
+        const test = word.reduce((pre, buf) =>{
+            // 接收一个函数作为累加器，数组中的每个值（从左到右）开始缩减，最终计算为一个值
+            // return pre.replace(buf, `<a href = "?w=${buf}">${buf}</a>`); 
+            // console.log(pre);
+            // pre为初始值或者计算结束后的返回值。
+            // buf为当前值。
+            return pre = pre + "\n" + buf;
+            // `反引号
+            // 模板字符串(Template String)是增强版的字符串，
+            // 用反引号(`)标识，它可以当作普通字符串使用，
+            // 也可以用来定义多行字符串，或者在字符串中嵌入变量。
+        },"zero"); // string变量当作函数的初始值
+        // console.log(test);
+        // document.body.innerHTML += test;
+
+        // function phone(mobile, len) {
+            
+        //     return String(mobile).slice(0,len*-1) + '*'.repeat(len);
+        // }
+        // console.log(phone(123456, 4));
+        
+        // 字符串转换。
+        // const aa = "99";
+        // console.log(typeof aa);
+        // console.log(aa*1 + 2);// 隐式转换。
+        // console.log(Number(aa) + 1);
+
+        //数字转换。
+        // const bb = 99;
+        // console.log(typeof String(bb));
+        // cc = bb + ""; // 隐式转换。
+        // console.log(typeof cc);
+
+        // const dd = "11aa99wangdeshi";
+        // console.log(parseInt(dd));// 只打印字符串中的整数(如果不是数字开头则为NaN)
+        // console.log(parseFloat(dd));
+
+        // const ee = "wangdeshi";
+        // console.log(ee.split("").length);
+        // const arr = ["wang", "tao"];
+        // console.log(arr.join("")); // 连接数组中的字符，参数为插入的连接符
+
+        // let str = "wangdeshi";
+        // console.log(typeof str);
+        // let arr = new String("wangdeshi");
+        // console.log(typeof arr);
+        
+        // console.log(str.substr(0,2)); // 调用substr时候，会把非对象隐式转换为对象。
+        
+        // const arr = ["wang", "tao"];
+        // console.log(arr.toString());
+        
+        // let number = 100;
+        // const newNumber = number.toString();
+        // console.log(typeof newNumber);
+
+        // const boolean = new Boolean(true);
+        // console.log(boolean instanceof Array);
+        // console.log(boolean.valueOf());
+        // boolean隐式转换
+        // let aa = 1;
+        // let bb = "1";
+        // let cc = ["1","2"];
+        // console.log(Number(cc[1]));
+        // let dd = [];
+        // let ee = null;
+        // let ff = undefined;
+        // let gg = "";
+        // let hh = NaN;
+        // console.log(Boolean(dd));
+        // Boolean()会把除了空字符串，null，undefined，NaN以外的类型转化为true。
+        
+        // Boolean
+        // while(true){
+        //     const year = prompt("王德师哪年出生").trim();
+        //     if(!year) continue;
+        //     console.log(year == "2010" ?"回答正确":"回答错误");
+        //     break;
+        // }
+        // let number = 99.226;
+        // console.log(number.toFixed(2)); // 四舍五入。
+
+    </script>
+</body>
+</html>

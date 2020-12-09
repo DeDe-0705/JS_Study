@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .disable{
+            color:red;
+        }
+    </style>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <script>
+        let divs = document.querySelectorAll("div");
+        divs.forEach(function(item){
+            item.addEventListener("click",function(){
+                //这里的this指向了事件元素
+                this.classList.toggle("disable");
+            });
+        })
+        // let divs = document.querySelectorAll("div");
+        // for(var i = 0;i<divs.length;i++){
+        //     divs[i].addEventListener("click", function(){
+        //         console.log(i);
+        //     })
+        //     //为每个div添加一个点击事件，但是不触发。这样用var声明i，触发的时候每个div都是div的总数。
+        // }
+        let lessons = [
+            {
+                name: "数学maths", num: 10
+            },
+            {
+                name: "语文chinese", num: 15
+            },
+            {
+                name: "英语english", num: 13
+            }
+        ];
+        // // for(let i = 0;i<lessons.length;i++){
+        // //     lessons[i].name = `北京邮电大学的${lessons[i].name}`;
+        // // }
+        // //值类型在发生改变的时候不会影响原来的变量，引用类型发生改变的时候会影响原来的变量。
+        // for(const value of lessons){
+        //     value.name = `北京邮电大学的${value.name}`;
+        // }
+        // let arr = [1,2,3,4,5];
+        // for(let value of arr){
+        //     value = value+1;
+        // }
+        // for(const key in lessons){
+        //     lessons[key].name = `北京邮电大学的${lessons[key].name}`;
+        // }
+        // console.table(arr);
+        // lessons.forEach(function(item, index){
+        //     item.name = item.name.substr(0,3);
+        //     console.log(item);
+        // }, {});//function第二个的参数传入函数执行的上下文也就是this值
+
+        window.name = "tao";
+        let obj = {
+            name: "wang",
+            test() {
+            let that = this;
+            return function () {
+                console.log(that.name);
+            }
+            }
+        }
+        function testFunc(newId) {
+            let id = newId?newId:12345678;
+            this.getId = function () {
+                return id;
+            }
+        }
+        function testFunc_2(newId) {
+            let id = newId?newId:12345678;
+            console.log(this);
+            return function () {
+                console.log(this);
+            }
+        }
+        let c = testFunc_2();
+        c();
+        let a = obj.test();
+        let b = testFunc();
+        // a();
+        // b();
+        // console.log(this.getId());
+    </script>
+</body>
+</html>
